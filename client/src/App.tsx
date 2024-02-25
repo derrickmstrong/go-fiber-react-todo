@@ -1,4 +1,4 @@
-import { Box, List, ThemeIcon } from "@mantine/core";
+import { Box, Center, List, ThemeIcon } from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import useSWR from "swr";
 import "./App.css";
@@ -28,45 +28,51 @@ function App() {
   }
 
   return (
-    <Box
-      w={{ base: 200, sm: 400, lg: 500, xl: 600 }}
-      py={{ base: "xs", sm: "md", lg: "xl", xl: "2xl" }}
-      bg={{ base: "blue.7", sm: "red.7", lg: "green.7", xl: "gray.7" }}
-      c="#fff"
-      ta="center"
-      mx="auto"
+    <Center
+      // maw={{ base: 200, sm: 400, lg: 500, xl: 700 }}
+      h={675}
+      bg="var(--mantine-color-gray-light)"
     >
-      <List
-        spacing="xs"
-        size="sm"
-        mb={{ base: "lg", sm: "xl", lg: "2xl", xl: "3xl" }}
-        center
+      <Box
+        w={{ base: 200, sm: 400, lg: 500, xl: 700 }}
+        px={{ base: "xs", sm: "md", lg: "xl", xl: "2xl" }}
+        py={{ base: "xs", sm: "md", lg: "xl", xl: "2xl" }}
+        bg={{ base: "blue.7", sm: "red.7", lg: "green.7", xl: "gray.7" }}
+        c="#fff"
+        // ta="center"
+        mx="auto"
       >
-        {data?.map((todo) => {
-          return (
-            <List.Item
-              onClick={() => markTodoAsCompleted(todo.id)}
-              key={`todo_list__${todo.id}`}
-              icon={
-                todo.completed ? (
-                  <ThemeIcon color="teal" size={24} radius="xl">
-                    <CheckCircleFillIcon size={20} />
-                  </ThemeIcon>
-                ) : (
-                  <ThemeIcon color="gray" size={24} radius="xl">
-                    <CheckCircleFillIcon size={20} />
-                  </ThemeIcon>
-                )
-              }
-            >
-              {todo.completed ? <s>{todo.title}</s> : todo.title}
-            </List.Item>
-          );
-        })}
-      </List>
-
-      <AddTodo mutate={mutate} />
-    </Box>
+        <List
+          spacing="xs"
+          size="sm"
+          mb={{ base: "lg", sm: "xl", lg: "2xl", xl: "3xl" }}
+          center
+        >
+          {data?.map((todo) => {
+            return (
+              <List.Item
+                onClick={() => markTodoAsCompleted(todo.id)}
+                key={`todo_list__${todo.id}`}
+                icon={
+                  todo.completed ? (
+                    <ThemeIcon color="teal" size={24} radius="xl">
+                      <CheckCircleFillIcon size={20} />
+                    </ThemeIcon>
+                  ) : (
+                    <ThemeIcon color="gray" size={24} radius="xl">
+                      <CheckCircleFillIcon size={20} />
+                    </ThemeIcon>
+                  )
+                }
+              >
+                {todo.completed ? <s>{todo.title}</s> : todo.title}
+              </List.Item>
+            );
+          })}
+        </List>
+        <AddTodo mutate={mutate} />
+      </Box>
+    </Center>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
-import { Button, Modal, Group, TextInput, Textarea } from "@mantine/core";
+import { Button, Modal, Group, TextInput, Textarea, Center } from "@mantine/core";
 import { ENDPOINT, Todo } from "../App";
 import { KeyedMutator } from "swr";
 
@@ -51,8 +51,9 @@ function AddTodo({ mutate }: { mutate: KeyedMutator<Todo[]> }) {
           </Group>
         </form>
       </Modal>
-
-      <Button onClick={open}>ADD TODO</Button>
+      <Center>
+        <Button onClick={open}>ADD TODO</Button>
+      </Center>
     </>
   );
 }
