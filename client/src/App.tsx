@@ -30,8 +30,8 @@ function App() {
   return (
     <Center
       // maw={{ base: 200, sm: 400, lg: 500, xl: 700 }}
-      h={675}
-      bg="var(--mantine-color-gray-light)"
+      h={500}
+      // bg="var(--mantine-color-gray-light)"
     >
       <Box
         w={{ base: 200, sm: 400, lg: 500, xl: 700 }}
