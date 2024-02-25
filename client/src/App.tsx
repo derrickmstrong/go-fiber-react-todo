@@ -1,4 +1,4 @@
-import { Box, Center, Flex, List, ThemeIcon } from "@mantine/core";
+import { Box, Flex, List, ThemeIcon } from "@mantine/core";
 import { CheckCircleFillIcon, TrashIcon } from "@primer/octicons-react";
 import useSWR from "swr";
 import "./App.css";
