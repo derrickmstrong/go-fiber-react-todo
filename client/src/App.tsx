@@ -41,9 +41,9 @@ function App() {
         w={{ base: 200, sm: 400, lg: 500, xl: 700 }}
         px={{ base: "xs", sm: "md", lg: "xl", xl: "2xl" }}
         py={{ base: "xs", sm: "md", lg: "xl", xl: "2xl" }}
-        bg={{ base: "blue.7", sm: "orange.7", lg: "green.7", xl: "gray.7" }}
-        mt={{ base: "lg", sm: "xl", lg: "2xl", xl: "3xl" }}
         mx="auto"
+        my={{ base: "lg", sm: "xl", lg: "2xl", xl: "3xl" }}
+        bg={{ base: "blue.7", sm: "orange.7", lg: "green.7", xl: "gray.7" }}
         c="#fff"
         ta="center"
       >
